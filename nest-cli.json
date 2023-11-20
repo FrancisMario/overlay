@@ -6,7 +6,11 @@
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/apigateway/tsconfig.app.json"
+    "tsConfigPath": "apps/apigateway/tsconfig.app.json",
+    "assets": [
+      "proto/*.proto"
+    ],
+    "watchAssets": true
   },
   "monorepo": true,
   "root": "apps/apigateway",
@@ -18,7 +22,9 @@
       "sourceRoot": "./",
       "compilerOptions": {
         "tsConfigPath": "apps/apigateway/tsconfig.app.json",
-        "assets": ["proto/*.proto"],
+        "assets": [
+          "proto/*.proto"
+        ],
         "watchAssets": true
       }
     },
@@ -29,7 +35,9 @@
       "sourceRoot": "./",
       "compilerOptions": {
         "tsConfigPath": "apps/auth/tsconfig.app.json",
-        "assets": ["proto/*.proto"],
+        "assets": [
+          "proto/*.proto"
+        ],
         "watchAssets": true
       }
     },
@@ -40,6 +48,15 @@
       "sourceRoot": "libs/common/src",
       "compilerOptions": {
         "tsConfigPath": "libs/common/tsconfig.lib.json"
+      }
+    },
+    "region": {
+      "type": "application",
+      "root": "apps/region",
+      "entryFile": "main",
+      "sourceRoot": "apps/region/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/region/tsconfig.app.json"
       }
     }
   }
